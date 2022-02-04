@@ -20,10 +20,6 @@ life.name = "life_expectancy"
 population.name = "population"
 
 
-def columns_as_int():
-    """coverts columns values into integers"""
-    for df in data:
-        df.columns = df.columns.astype(int)
 
 def df_meltconv(df):
 
@@ -34,7 +30,9 @@ def df_meltconv(df):
        
 
 # making sure that all column values are integers
-columns_as_int()
+
+for df in data:
+        df.columns = df.columns.astype(int)
 
 # converting the DataFrames
 life_melted = df_meltconv(life)
